@@ -32,8 +32,9 @@
 	} else {
 		echo "Dữ liệu đã tồn tại trong file.";
 	}
+	
     }
-    //include "";
+    
 ?>
 
 <!DOCTYPE html>
@@ -55,5 +56,8 @@
 		
 		<input type="submit" value="Submit">
 	</form>
+	<?php
+	include "php/read_file.php";
+	?>
 </body>
 </html>
