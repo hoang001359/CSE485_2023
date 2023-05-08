@@ -28,13 +28,29 @@ class Student {
     $this->age = $age;
   }
 }
-
-// Sử dụng lớp Student
+class StudentDAO {
+  private $students;
+  public function __construct() {
+      $this->students = array();
+  }
+  
+  public function create(Student $student) {
+      array_push($this->students, $student);
+  }
+  public function read($id) {
+      foreach($this->students as $student) {
+          if($student->getId() == $id) {
+              return $student;
+          }
+      }
+      return null;
+  }
+} 
+//Sử dụng lớp Student
 $student = new Student();
 $student->setId(345);
 $student->setName("Phạm Công Khanh");
 $student->setAge(20);
-
 echo "Student ID: " . $student->getId() . "<br>";
 echo "Student Name: " . $student->getName() . "<br>";
 echo "Student Age: " . $student->getAge() . "<br>";
