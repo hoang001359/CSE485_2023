@@ -1,0 +1,39 @@
+html, body {
+    margin: 0;
+  }
+  
+  body {
+    background-color: #d4b764;
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+    background-image: url("../assets/pattern.png");
+    background-repeat: repeat;
+    background-position: center;
+  }
+#div-title{
+  /* background-color:rgb(44, 76, 102); */
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#title{
+  font-size: 36px;
+}
+#title2{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#txt {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+#submitbtn{
+  margin-left: 10%;
+}
+#formInput{
+  background-color:rgb(41, 54, 72);
+  border-color: #fff;
+  border: 2.5px solid;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}

@@ -45,13 +45,25 @@ class StudentDAO {
       }
       return null;
   }
+  public function delete($id) {
+    foreach($this->students as $key => $student) {
+        if($student->getId() == $id) {
+            unset($this->students[$key]);
+            return true;
+        }
+    }
+    return false;
+  }
+  public function getAll() {
+    return $this->students;
+  }
 } 
 //Sử dụng lớp Student
-$student = new Student();
-$student->setId(345);
-$student->setName("Phạm Công Khanh");
-$student->setAge(20);
-echo "Student ID: " . $student->getId() . "<br>";
-echo "Student Name: " . $student->getName() . "<br>";
-echo "Student Age: " . $student->getAge() . "<br>";
+// $student = new Student();
+// $student->setId(345);
+// $student->setName("Phạm Công Khanh");
+// $student->setAge(20);
+// echo "Student ID: " . $student->getId() . "<br>";
+// echo "Student Name: " . $student->getName() . "<br>";
+// echo "Student Age: " . $student->getAge() . "<br>";
 ?>
