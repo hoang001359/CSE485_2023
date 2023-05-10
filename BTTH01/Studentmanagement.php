@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Studentmanagement.css">
+    <title>QUẢN LÝ SINH VIÊN</title>
+</head>
+
+<body>
+    <div id="table">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Mã sinh viên</th>
+                    <th scope="col">Họ và tên</th>
+                    <th scope="col">Sửa</th>
+                    <th scope="col">Xóa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+	                $file = fopen("dssv.txt", "r");
+	                $table = '<table>';
+	                while (!feof($file)) {
+		                $line = fgets($file);
+		                $data = explode(",", $line);
+		                $table .= '<tr>';
+		                foreach ($data as $i) {
+			                $table .= '<td>' . $i . '</td>';
+		                }
+		                $table .= '</tr>';
+	                }
+	            fclose($file);
+	            $table .= '</table>';
+	            echo $table;
+?>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

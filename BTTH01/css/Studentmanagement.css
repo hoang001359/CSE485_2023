@@ -1,0 +1,12 @@
+html, body {
+    margin: 0;
+  }
+  
+  body {
+    background-color: darkgrey;
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+    /* background-image: url("../assets/pattern.png"); */
+    background-repeat: repeat;
+    background-position: center;
+  }

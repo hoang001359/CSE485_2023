@@ -14,6 +14,7 @@
 	<div id="div-title">
 		<h1 id ="title">NHẬP THÔNG TIN SINH VIÊN</h1>
 	</div>
+	
 	<form id="formInput" method="POST" action="index.php">
 		<div id="txt" class="mb-3">
   			<label for="formGroupExampleInput" class="form-label">Mã sinh viên</label>
@@ -28,8 +29,11 @@
 			<input type="text" id="age" name="age" class="form-control" id="formGroupExampleInput2" placeholder="Nhập tuổi">
 		</div>
 		<input id="submitbtn"  type="submit" value="Submit">
+		<div id="btnEdit">
+		<a class="btn btn-primary" href="Studentmanagement.php" role="button">QUẢN LÍ SANH SÁCH</a>
+	</div>
 	</form>
-
+	
 
 
 	<script>
@@ -40,44 +44,3 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
-<?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $id = $_POST["id"];
-        $name = $_POST["name"];
-        $age = $_POST["age"];
-        
-        $file = fopen("dssv.txt", "r");
-	$data = array();
-	while (!feof($file)) {
-		$line = fgets($file);
-		if (!empty($line)) {
-			$fields = explode(",", $line);
-			$data[] = array("id" => $fields[0], "name" => $fields[1], "age" => $fields[2]);
-		}
-	}
-	fclose($file);
-
-	$is_duplicate = false;
-	foreach ($data as $item) {
-		if ($item["id"] == $id && $item["name"] == $name && $item["age"] == $age) {
-			$is_duplicate = true;
-			break;
-		}
-	}
-
-	if (!$is_duplicate) {
-		$file = fopen("dssv.txt", "a");
-		fwrite($file, $id . "," . $name . "," . $age . "\n");
-		fclose($file);
-
-		echo "Dữ liệu đã được ghi vào file.";
-	} else {
-		echo "Dữ liệu đã tồn tại trong file.";
-	}
-	
-    }
-?>
-<h1 id ="title2">DANH SÁCH SINH VIÊN</h1>
-<?php
-	include_once "php/read_file.php";
-?> 
