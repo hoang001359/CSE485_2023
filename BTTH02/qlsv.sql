@@ -101,7 +101,8 @@ CREATE TABLE `classsubjects` (
   `ID_LopHocPhan` int(11) NOT NULL,
   `ID_KhoaHoc` int(11) DEFAULT NULL,
   `ID_GiangVien` int(11) DEFAULT NULL,
-  `KhoangThoiGian` varchar(100) DEFAULT NULL
+  `KhoangThoiGian` varchar(100) DEFAULT NULL,
+  `TenLopHocPhan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

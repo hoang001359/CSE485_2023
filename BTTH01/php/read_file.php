@@ -6,7 +6,12 @@
 			<th>Tuổi</th>
 		</tr>
 		<?php
+<<<<<<< HEAD
+			//fopen(<file>, "r")Chỉ có thể đọc (bắt đầu đọc từ vị trí đầu tiên của tập tin)
+			$file = fopen("../dssv.txt", "r");
+=======
 			$file = fopen("dssv.txt", "r");
+>>>>>>> 5865e0f5924c26794d8dc7690a6d9a776f542645
 			$dataList = array();
 			while (!feof($file)) {
 				$line = fgets($file);
